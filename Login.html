@@ -1,0 +1,44 @@
+<?php include('PHP/Login.php') ?>
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Regestration Form </title>
+    <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet"  href="css/normlization.css">
+    <script type="text/javascript">
+
+    function validate()
+        {
+            var username = document.getElementById("uN1").value;
+            var password = document.getElementById("pW1").value;
+            if(username === "" || password === "")
+            {
+              alert("No balank values are allowed! :)");
+              return false;
+           }
+            else
+            {
+               return true;
+            }
+        }
+
+    </script>
+</head>
+
+
+<body>
+ <div class="login" style="height: 420px;">
+     <img src="images.png" class="avatar">
+     <h1>Login Here</h1>
+     <form  name="Register" action="PHP/Login.php" method="POST" onsubmit="return validate();" >
+    <label> Username </label>
+    <input id="uN1" type="text" name="username1" placeholder="Enter Username">
+    <label> Password </label>
+    <input id="pW1" type="password" name="password1" placeholder="Enter password">
+    <input  onclick="return validate();" type="submit" value="Login" name="login">
+    <a href="Register.html"> Don't have an account </a>
+    </form>
+
+</div>
+</body>
+</html>
